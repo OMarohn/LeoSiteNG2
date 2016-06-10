@@ -8,5 +8,5 @@ import {NewsItem} from './newsItem';
 })
 export class NewsItemComponent {
     @Input() item: NewsItem;
-
+    @Input() picPath: string;
 }

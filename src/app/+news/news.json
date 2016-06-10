@@ -1,0 +1,19 @@
+[
+  {
+    "datum": "01.01.2016",
+    "headline": "Aktueller Eintrag",
+    "text": "La le lu!"
+  },
+  {
+    "datum": "02.02.2016",
+    "bildURL": "ola.jpg",
+    "headline": "Prinzessin von Wersabe",
+    "text": "Dieses Bild zeigt Leo's Tochter <b>Ola von Wersabe</b>. Eine hübsche Maus, die kein Wässerchen trüben kann ;-). Sie erfreut ihre Besitzer mit ihrem charmanten Wesen und ihrer großen jagdlichen Passion."
+  },
+  {
+    "datum": "03.03.2016",
+    "bildURL": "ah.jpg",
+    "headline": "Halt!!!!",
+    "text": "Leo ...."
+  }
+]

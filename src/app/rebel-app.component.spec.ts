@@ -5,18 +5,18 @@ import {
   it,
   inject
 } from '@angular/core/testing';
-import { RebelAppAppComponent } from '../app/rebel-app.component';
+import { RebelAppComponent } from '../app/rebel-app.component';
 
-beforeEachProviders(() => [RebelAppAppComponent]);
+beforeEachProviders(() => [RebelAppComponent]);
 
 describe('App: RebelApp', () => {
   it('should create the app',
-      inject([RebelAppAppComponent], (app: RebelAppAppComponent) => {
+      inject([RebelAppComponent], (app: RebelAppComponent) => {
     expect(app).toBeTruthy();
   }));
 
   it('should have as title \'rebel-app works!\'',
-      inject([RebelAppAppComponent], (app: RebelAppAppComponent) => {
+      inject([RebelAppComponent], (app: RebelAppComponent) => {
     expect(app.title).toEqual('rebel-app works!');
   }));
 });

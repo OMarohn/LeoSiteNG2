@@ -1,21 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import {NewsItem} from './newsItem';
 import {NewsItemComponent} from './newsItem.component';
+import {NewsService} from "./news.service"; NewsService
+
 
 @Component({
   moduleId: module.id,
   selector: 'news-feed',
+  providers: [NewsService],
   directives: [NewsItemComponent],
   templateUrl: 'news.component.html',
   styleUrls: ['news.component.css']
 })
 export class NewsFeedComponent implements OnInit {
-  items:NewsItem[];
+  items: Array<NewsItem>=[];
+  picPath = "/app/pic/news/";
 
-  constructor() {
-    this.items = new Array();
-    this.items.push(new NewsItem("01.01.2016","Item 1",null));
-    this.items.push(new NewsItem("02.02.2016","<b>Item 2</b>",null));
+  constructor(service:NewsService) {
+    this.items = service.getNews('/app/+news/news.json');
   }
 
   ngOnInit() {
