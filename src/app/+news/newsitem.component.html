@@ -1,0 +1,7 @@
+<div *ngIf="item" class='well lead'>
+  <div class='newsdat'>{{item.datum}}</div>
+  <img class='img-responsive' src='{{item.bildURL}}'>
+  <div [innerHtml]="item.text">
+
+  </div>
+</div>
