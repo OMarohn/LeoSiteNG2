@@ -3,10 +3,14 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+  'moment': 'vendor/moment/moment.js',
+  'waypoints' : 'vendor/waypoints/lib/noframework.waypoints.js'
 };
 
 /** User packages configuration. */
 const packages: any = {
+  'moment' : {format:'cjs'},
+  'waypoints' : {format:'cjs'}
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -25,6 +29,7 @@ const barrels: string[] = [
 
   // Thirdparty barrels.
   'rxjs',
+  'waypoints',
 
   // App specific barrels.
   'app',
@@ -33,6 +38,7 @@ const barrels: string[] = [
   'app/nav',
   'app/link',
   'app/+bilder',
+  'app/bilder-liste',
   /** @cli-barrel */
 ];
 

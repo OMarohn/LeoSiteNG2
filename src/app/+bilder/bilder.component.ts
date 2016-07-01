@@ -1,49 +1,50 @@
-import {   Component,
-  Input,
-  trigger,
-  state,
-  style,
-  transition,
-  animate, OnInit } from '@angular/core';
+import {Component, ElementRef, Input, trigger, state, style, transition, animate} from '@angular/core';
+import * as moment from 'moment';
+
 
 @Component({
   moduleId: module.id,
-  selector: 'app-bilder',
+  selector: 'bilder',
   templateUrl: 'bilder.component.html',
   styleUrls: ['bilder.component.css'],
   animations: [
     trigger('animState', [
       state('inactive', style({
+        opacity: 0.01,
         backgroundColor: '#eee',
-        transform: 'scale(0.9)'
       })),
-      state('active',   style({
+      state('active', style({
+        opacity: 1,
         backgroundColor: '#cfd8dc',
-        transform: 'scale(1.0)'
       })),
-      transition('inactive => active', animate('100ms ease-in')),
-      transition('active => inactive', animate('100ms ease-out'))
+      transition('inactive => active', animate('500ms ease-in')),
+      transition('active => inactive', animate('500ms ease-out'))
     ])
   ]
 })
-export class BilderComponent implements OnInit {
-  private astate:string = "active";
+export class BilderComponent {
+  @Input() imageUrl:string;
+  private astate:string = "inactive";
 
-  constructor() {}
+  constructor(private element:ElementRef) {
+
+  }
+
+  getBounds():any {
+    let el = this.element.nativeElement.children[0];
+    console.log(el);
+    return {height:el.clientHeight, width:el.clientWidth, offsX:el.offsetLeft, offsY:el.offsetTop}
+  }
 
   toggleState():void {
-    if (this.astate=="active") {
-      this.astate="inactive";
+    if (this.astate == "active") {
+      this.astate = "inactive";
     } else {
-      this.astate="active";
+      this.astate = "active";
     }
-    console.info(this.astate);
   }
 
   getState():string {
     return this.astate;
   }
-  ngOnInit() {
-  }
-
 }

@@ -20,7 +20,7 @@ export class NavComponent implements OnInit {
   constructor(private ls : LinkService, private router : Router) {
     console.log(router);
     this.rt = router;
-    //this.rt.changes.subscribe((val) => {this.akRoute = this.rt.serializeUrl(this.rt.urlTree)});
+    this.rt.changes.subscribe((val) => {this.akRoute = this.rt.serializeUrl(this.rt.urlTree)});
     //console.log(this.rt.serializeUrl(this.rt));
     //console.log(this.rt.events);
     this.links = ls.getLinks();

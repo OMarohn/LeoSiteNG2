@@ -1,1 +1,1 @@
-export { BilderComponent } from './bilder.component';
+export { BilderListeComponent } from './bilder-liste.component';

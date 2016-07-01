@@ -3,7 +3,7 @@ import { Routes , ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
 import { HTTP_PROVIDERS } from '@angular/http';
 import { NavComponent } from './nav';
 import { NewsFeedComponent } from './+news';
-import { BilderComponent } from './+bilder';
+import { BilderListeComponent } from './+bilder';
 
 @Component({
   moduleId: module.id,
@@ -15,7 +15,7 @@ import { BilderComponent } from './+bilder';
 })
 @Routes([
   {path: '/news', component: NewsFeedComponent},
-  {path: '/bilder', component: BilderComponent}
+  {path: '/bilder', component: BilderListeComponent}
 ])
 export class RebelAppComponent {
   title = 'rebel-app works!';
